@@ -1,0 +1,32 @@
+{
+  "name": "mentalist",
+  "version": "0.0.1",
+  "description": "Read and parse environment variables",
+  "main": "lib",
+  "scripts": {
+    "test": "npm run lint && npm run mocha",
+    "mocha": "mocha ./test",
+    "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://janpot@github.com/Janpot/mentalist.git"
+  },
+  "keywords": [
+    "environment",
+    "variables",
+    "env"
+  ],
+  "author": "Jan Potoms",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Janpot/mentalist/issues"
+  },
+  "homepage": "https://github.com/Janpot/mentalist",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jshint": "^2.5.10",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "^2.0.1"
+  }
+}
