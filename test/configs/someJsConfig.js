@@ -1,0 +1,1 @@
+exports.MARKER = 'jsConfig';
