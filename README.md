@@ -25,6 +25,8 @@ The object returned by this file wil be used to write the environment variables.
 
 ## Setup
 
+Given the following file structure:
+
 ```text
 .
 ├── lib
@@ -35,6 +37,9 @@ The object returned by this file wil be used to write the environment variables.
 │   └── development.js
 └── package.json
 ```
+
+We add a configuration file that loads the mentalist library, initializes it and exports al desired configuration.
+Note that the `mentalist.load();` is optional if you don't use environment specific configuration files.
 
 ```js
 // lib/config.js
@@ -47,12 +52,18 @@ exports.debug    = mentalist.bool('DEBUG', false);
 exports.required = mentalist.string('REQUIRED');
 ```
 
+We add a development configuration file that initializes the environment variables we want during development.
+In this case we set debug mode on with a higher log level.
+Note that we added the `REQUIRED` variable, since it has no default value in the configuration file it would throw an exception when undefined.
+
 ```js
 // mentalist/development.js
 exports.LOGLEVEL = 'trace';
 exports.DEBUG    = true;
 exports.REQUIRED = 'some value';
 ```
+
+We can now use our configuration module in the rest of our application.
 
 ```js
 // lib/server.js
