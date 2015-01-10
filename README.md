@@ -3,6 +3,8 @@ mentalist
 
 Environment variable management for configuring applications.
 
+## status
+
 [![Build Status](https://travis-ci.org/Janpot/mentalist.svg)](https://travis-ci.org/Janpot/mentalist)
 
 ## installation

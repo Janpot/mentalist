@@ -1,7 +1,7 @@
 {
   "name": "mentalist",
   "version": "0.1.1",
-  "description": "Read and parse environment variables",
+  "description": "Environment variable management for configuring applications.",
   "main": "lib",
   "scripts": {
     "test": "npm run lint && npm run mocha",
