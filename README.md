@@ -3,8 +3,6 @@ mentalist
 
 Environment variable management for configuring applications.
 
-## status
-
 [![Build Status](https://travis-ci.org/Janpot/mentalist.svg)](https://travis-ci.org/Janpot/mentalist)
 
 ## installation
@@ -67,11 +65,15 @@ if (config.debug) {
 
 ## API
 
-    var mentalist = require('mentalist');
+```js
+var mentalist = require('mentalist');
+```
 
 ### Loading
 
-    mentalist.load([overwrites]);
+```js
+mentalist.load([overwrites]);
+```
 
 Reads the specified configuration file and adds its content to the environment variables.
 The location of these files is by default a `mentalist` folder in the current working directory.
@@ -84,7 +86,9 @@ If you want you can also call this function with a parameter which is an object 
 
 ### Booleans
 
-    var myBool = mentalist.bool(variableName, [default]);
+```js
+var myBool = mentalist.bool(variableName, [default]);
+```
 
 Reads in and parses a boolean environment variable and provides a default if not found.
 If `default` is not specified the function throws when the variable doesn't exist.
@@ -93,7 +97,9 @@ If `default` is not specified the function throws when the variable doesn't exis
 
 ### Numbers
 
-    var myNumber = mentalist.number(variableName, [default]);
+```js
+var myNumber = mentalist.number(variableName, [default]);
+```
 
 Reads in and parses a numerical environment variable and provides a default if not found.
 If `default` is not specified the function throws when the variable doesn't exist.
@@ -102,7 +108,9 @@ If `default` is not specified the function throws when the variable doesn't exis
 
 ### Strings
 
-    var myString = mentalist.string(variableName, [default]);
+```js
+var myString = mentalist.string(variableName, [default]);
+```
 
 Reads in a string environment variable and provides a default if not found.
 If `default` is not specified the function throws when the variable doesn't exist.
@@ -111,7 +119,9 @@ If `default` is not specified the function throws when the variable doesn't exis
 
 ### Objects
 
-    var myobject = mentalist.object(variableName, [default]);
+```js
+var myobject = mentalist.object(variableName, [default]);
+```
 
 Reads in an object from an environment variable and provides a default if not found.
 If `default` is not specified the function throws when the variable doesn't exist.
