@@ -15,7 +15,9 @@
   "keywords": [
     "environment",
     "variables",
-    "env"
+    "env",
+    "config",
+    "configuration"
   ],
   "author": "Jan Potoms",
   "license": "MIT",
