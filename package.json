@@ -1,6 +1,6 @@
 {
   "name": "mentalist",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Environment variable management for configuring applications.",
   "main": "lib",
   "scripts": {
