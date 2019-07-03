@@ -22,7 +22,7 @@ describe('.object', function () {
     delete process.env.UNDEFINED;
     assert.throws(function () {
       mentalist.object('UNDEFINED');
-    });
+    }, 'Missing environment variable "UNDEFINED" of type "object"');
   });
 
   it('("OBJECT") should return { some: "object" }', function () {
@@ -35,14 +35,14 @@ describe('.object', function () {
     process.env.NULL = 'null';
     assert.throws(function () {
       mentalist.object('NULL');
-    });
+    }, 'Wrong type for environment variable "NULL", expected "object" but got "null"');
   });
 
   it('("ARRAY") should throw', function () {
     process.env.ARRAY = '["some", "array"]';
     assert.throws(function () {
       mentalist.object('ARRAY');
-    });
+    }, 'Wrong type for environment variable "ARRAY", expected "object" but got "["some", "array"]"');
   });
 
   it('("OBJECT", {other: "object"}) should return { some: "object" }', function () {
@@ -55,7 +55,7 @@ describe('.object', function () {
     process.env.EMPTY_ARRAY = '[]';
     assert.throws(function () {
       mentalist.object('EMPTY_ARRAY', { other: 'object' });
-    });
+    }, 'Wrong type for environment variable "EMPTY_ARRAY", expected "object" but got "[]"');
   });
 
   it('("UNDEFINED", null) should return null', function () {

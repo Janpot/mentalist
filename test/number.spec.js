@@ -22,7 +22,7 @@ describe('.number', function () {
     delete process.env.UNDEFINED;
     assert.throws(function () {
       mentalist.number('UNDEFINED');
-    });
+    }, 'Missing environment variable "UNDEFINED" of type "number"');
   });
 
   it('("STRING", 1) should throw', function () {
@@ -84,7 +84,7 @@ describe('.number', function () {
     delete process.env.UNDEFINED;
     assert.throws(function () {
       mentalist.number('UNDEFINED', 'hello');
-    });
+    }, 'Wrong type for "UNDEFINED"\'s default value, expected "number" but got "hello"');
   });
 
   it('("UNDEFINED", "1hello") should throw', function () {
@@ -98,13 +98,13 @@ describe('.number', function () {
     process.env.PARSABLE = '1hello';
     assert.throws(function () {
       mentalist.number('PARSABLE', 1);
-    });
+    }, 'Wrong type for environment variable "PARSABLE", expected "number" but got "1hello"');
   });
 
   it('("EMPTY_STRING", 1) should throw', function () {
     process.env.EMPTY_STRING = '';
     assert.throws(function () {
       mentalist.number('EMPTY_STRING', 1);
-    });
+    }, 'Wrong type for environment variable "EMPTY_STRING", expected "number" but got ""');
   });
 });

@@ -22,7 +22,7 @@ describe('.string', function () {
     delete process.env.UNDEFINED;
     assert.throws(function () {
       mentalist.string('UNDEFINED');
-    });
+    }, 'Missing environment variable "UNDEFINED" of type "string"');
   });
 
   it('("STRING") should return "string"', function () {
